@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/category_products.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="search-page">
+
+    <form method="GET" action="{% url 'search' %}" class="search">
+        <input type="text" name="q" placeholder="Search products..." value="{{ query }}">
+
+        <button type="submit">
+            Search
+        </button>
+    </form>
+</div>
+
+<div class="products-main">
+    {% for product in products %}
+    <div class="product-card">
+        <div class="product-img">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        </div>
+        <div class="product-desc">
+            <h4>{{ product.name }}</h4>
+            <p class="price">₹{{ product.price }}</p>
+            <p class="rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </p>
+            <button>Add to Cart</button>
+            <button>Add to Wishlist</button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

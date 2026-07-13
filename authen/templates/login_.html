@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/authen.css' %}">
+{% endblock %}
+{% block content %}
+<div class="login-form">
+    <div class="login-header">
+        <h2>Login</h2>
+    </div>
+    <div class="line"></div>
+    <div class="login-body">
+        {{error}}
+        <form method="POST" action="">
+            
+            {% csrf_token %}
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" placeholder="Enter username" required><br><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" placeholder="Enter password" required><br><br>
+            <div class="login-btn">
+                <button type="submit" value="Login">
+                    Login
+                </button>
+                <a href="#" class="register-link">Forgot Password?</a>
+                <p class="register-link">
+                    Don't have an account? <a href="{% url 'register' %}">Register here</a>
+                </p>
+            </div>
+        </form>
+    </div>
+{% endblock %}

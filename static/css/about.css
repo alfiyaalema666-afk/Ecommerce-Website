@@ -1,0 +1,155 @@
+.about-section{
+    width:100%;
+    min-height:100vh;
+    background:#F9F4F0;
+    padding:120px 0 60px;
+}
+
+.about-banner{
+    width:90%;
+    margin:auto;
+    background:#EFD3D0;
+    padding:70px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.about-banner h1{
+    font-size:48px;
+    color:#1C342C;
+}
+
+.about-banner p{
+    margin-top:15px;
+    color:#555;
+    font-size:18px;
+}
+
+.about-container{
+    width:90%;
+    margin:70px auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+}
+
+.about-image{
+    width:45%;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.about-content{
+    width:55%;
+}
+
+.about-content h2{
+    color:#1C342C;
+    margin-bottom:20px;
+    font-size:36px;
+}
+
+.about-content p{
+    line-height:30px;
+    color:#555;
+    font-size:17px;
+    margin-bottom:20px;
+}
+
+.mission-section{
+    width:90%;
+    margin:70px auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.mission-card{
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+    transition:.3s;
+}
+
+.mission-card:hover{
+    transform:translateY(-10px);
+}
+
+.mission-card h3{
+    color:#1C342C;
+    margin-bottom:15px;
+}
+
+.mission-card p{
+    color:#555;
+    line-height:28px;
+}
+
+.why-section{
+    width:90%;
+    margin:80px auto;
+}
+
+.why-section h2{
+    text-align:center;
+    color:#1C342C;
+    margin-bottom:40px;
+    font-size:38px;
+}
+
+.why-container{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.why-card{
+    background:white;
+    text-align:center;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+    transition:.3s;
+}
+
+.why-card:hover{
+    background:#EFD3D0;
+    transform:translateY(-8px);
+}
+
+.why-card h3{
+    color:#1C342C;
+    margin-bottom:15px;
+}
+
+.why-card p{
+    color:#555;
+}
+
+.contact-box{
+    width:70%;
+    margin:80px auto;
+    background:white;
+    padding:50px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+}
+
+.contact-box h2{
+    color:#1C342C;
+    margin-bottom:25px;
+    font-size:36px;
+}
+
+.contact-box p{
+    font-size:18px;
+    margin:15px 0;
+    color:#444;
+}

@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/authen.css' %}">
+{% endblock %}
+{% block content %}
+<div class="register-form">
+    <div class="register-header">
+        <h2>Register</h2>
+    </div>
+    <div class="line"></div>
+    <div class="register-body">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <label for="first_name">First Name:</label><br>
+            <input type="text" id="first_name" name="fname" placeholder="Enter first name" required><br><br>
+
+            <label for="last_name">Last Name:</label><br>
+            <input type="text" id="last_name" name="lname" placeholder="Enter last name" required><br><br>
+
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" placeholder="Enter username" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="Enter email" required><br><br>
+
+            <label for="phone">Phone no. :</label><br>
+            <input type="text" name="phone" placeholder="Phone Number"><br><br>
+
+            <label for="address">Address:</label><br>
+            <textarea name="address" placeholder="Address"></textarea><br><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" placeholder="Enter password" required><br><br>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

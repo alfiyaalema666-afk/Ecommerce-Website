@@ -1,0 +1,74 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1 class="cart-heading">My Shopping Cart</h1>
+
+{% if cart_items %}
+
+<table class="cart-table">
+
+<tr>
+    <th>Image</th>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Total</th>
+</tr>
+
+{% for item in cart_items %}
+
+<tr>
+
+<td>
+<img src="{{ item.product.image.url }}">
+</td>
+
+<td class="product-name">
+{{ item.product.name }}
+</td>
+
+<td class="price">
+₹{{ item.product.price }}
+</td>
+
+<td class="quantity">
+{{ item.quantity }}
+</td>
+
+<td class="price">
+₹{{ item.product.price|floatformat:2 }}
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<div class="total-box">
+<div class="total">
+Grand Total : ₹{{ total }}
+</div>
+</div>
+
+<div class="checkout">
+<button>Proceed to Checkout</button>
+</div>
+
+{% else %}
+
+<div class="empty-cart">
+<h2>Your Cart is Empty 🛒</h2>
+
+<a href="{% url 'home' %}">
+Continue Shopping
+</a>
+
+</div>
+
+{% endif %}
+{% endblock %}

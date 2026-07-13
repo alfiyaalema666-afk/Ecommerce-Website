@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/category_products.css' %}">
+{% endblock %}
+{% block content %}
+<div class="products-main">
+    {% for product in products %}
+    <div class="product-card">
+        <div class="product-img">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        </div>
+        <div class="product-desc">
+            <h4>{{ product.name }}</h4>
+            <p class="price">₹{{ product.price }}</p>
+            <p class="rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </p>
+            <a href="{% url 'add_to_cart' product.id %}">
+                <button>Add to Cart</button>
+            </a>
+            <a href="{% url 'add_to_wishlist' product.id %}">
+                <button>Add to Wishlist</button>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

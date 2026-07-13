@@ -1,0 +1,112 @@
+.products-main {
+    width: 90%;
+    min-height: 500px;
+    margin-top: 100px;
+    margin: 100px auto;
+    background-color: #e9c3be;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    justify-content: space-around;
+    padding-left: 20px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    border-radius: 1%;
+
+    .product-card {
+        width: 90%;
+        height: 440px;
+        background-color: white;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+        border-radius: 3%;
+
+        .product-img {
+            width: 90%;
+            height: 200px;
+            margin: 0 auto;
+            margin-top: 16px;
+            margin-bottom: 10px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 1%;
+
+            }
+        }
+
+        .product-desc {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 5px;
+            margin: 2px auto;
+            padding-left: 10px;
+            padding-right: 10px;
+
+            button {
+                padding: 10px 35px;
+                border-radius: 20px;
+                background-color: #e9c3be;
+                color: #1C342C;
+                margin-top: 10px;
+                font-weight: 600;
+                border: none;
+                transition: 0.8s;
+            }
+
+            button:hover {
+                background-color: #1C342C;
+                color: #e9c3be;
+                transform: scale(0.9);
+            }
+
+            .rating {
+                font-size: 10px;
+                color: #1a7156;
+                margin-top: 5px;
+            }
+
+            .price {
+                margin-top: 5px;
+                font-size: 15px;
+            }
+
+
+        }
+
+    }
+
+}
+
+.search-page {
+    width: 90%;
+    margin: 100px auto;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.search input {
+    width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search button {
+    padding: 10px 35px;
+    border-radius: 20px;
+    background-color: #e9c3be;
+    color: #1C342C;
+    font-weight: 600;
+    border: none;
+    transition: 0.8s;
+}

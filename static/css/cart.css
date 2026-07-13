@@ -1,0 +1,137 @@
+/* Cart Heading */
+
+.cart-heading{
+    text-align:center;
+    font-size:38px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    color:#444;
+    font-weight:bold;
+}
+
+/* Table */
+
+.cart-table{
+    width:90%;
+    margin:auto;
+   
+    border-collapse:collapse;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.cart-table th{
+    background:#f8dfe3;
+    color:#444;
+    padding:18px;
+    font-size:18px;
+}
+
+.cart-table td{
+    padding:18px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+}
+
+.cart-table tr:hover{
+    background:#fff7f8;
+}
+
+.cart-table img{
+    width:90px;
+    height:110px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* Product Name */
+
+.product-name{
+    font-size:18px;
+    font-weight:600;
+    color:#444;
+}
+
+/* Price */
+
+.price{
+    color:#777;
+    font-size:18px;
+}
+
+/* Quantity */
+
+.quantity{
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* Grand Total Box */
+
+.total-box{
+    width:90%;
+    margin:40px auto;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.total{
+    background:#f8dfe3;
+    padding:20px 40px;
+    border-radius:12px;
+    font-size:24px;
+    font-weight:bold;
+    color:#444;
+}
+
+/* Checkout Button */
+
+.checkout{
+    width:90%;
+    margin:30px auto 60px;
+    text-align:right;
+}
+
+.checkout button{
+    background:#e8b9c1;
+    color:#333;
+    border:none;
+    padding:15px 40px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:18px;
+    transition:.3s;
+}
+
+.checkout button:hover{
+    background:#d99eaa;
+    color:white;
+}
+
+/* Empty Cart */
+
+.empty-cart{
+    text-align:center;
+    margin:120px 0;
+}
+
+.empty-cart h2{
+    color:#666;
+    margin-bottom:20px;
+}
+
+.empty-cart a{
+    text-decoration:none;
+    background:#e8b9c1;
+    color:#333;
+    padding:15px 35px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.empty-cart a:hover{
+    background:#d99eaa;
+    color:white;
+}

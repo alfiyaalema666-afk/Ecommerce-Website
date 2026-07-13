@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/authen.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    
+    <div class="profile-header">
+        <h2>Profile Details</h2>
+        <div class="line"></div>
+        <p class="welcome-message">Welcome, {{ request.user.first_name }}!</p>
+    </div>
+
+    <div class="profile-info">
+        <p><strong>Username:</strong> {{ request.user.username }}</p>
+        <p><strong>Email:</strong> {{ request.user.email }}</p>
+        <p><strong>First Name:</strong> {{ request.user.first_name }}</p>
+        <p><strong>Last Name:</strong> {{ request.user.last_name }}</p>
+    </div>
+    <div class="update-user">
+        <button id="btn"><a href="{% url 'update' %}">Update Profile</a></button>
+        <button id="btn"><a href="{% url 'logout_' %}">Logout</a></button>
+    </div>
+</div>
+{% endblock %}

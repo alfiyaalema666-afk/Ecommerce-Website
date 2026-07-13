@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/authen.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="fp-container">
+    <div class="fp-header">
+        <h2>Reset Password</h2>
+        <h2>user: {{request.user.get_username}}</h2>
+    </div>
+    <div class="fp-body">
+        <form method="post">
+            {% csrf_token %}
+            <label for="">Username:</label>
+            <input type="text" name="username" value="{{request.user.get_username}}" id="" readonly> <br><br>
+
+            <label for="">New Password:</label>
+            <input type="password" name="new_pass" id=""> <br><br>
+            <label for="">Confirm New Password:</label>
+            <input type="password" name="confirm_pass" id=""> <br><br>
+
+            <button type="submit">Reset Password</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

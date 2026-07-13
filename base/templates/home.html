@@ -1,0 +1,121 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+{% block content %}
+<div class="main-con">
+    <div class="main-head">
+        <p>NEW SEASON COLLECTION</p>
+        <h2>Live Beautifully.</h2>
+        <h3>Shop Effortlessly.</h3>
+        <p class="main-sub">Curated styles, quality you love.</p>
+        <p class="main-sub">delivered to your door</p>
+        <button>Shop Now &nbsp; &nbsp;<i class="fa-solid fa-angle-right"></i></button>
+        <div class="main-icons">
+            <div class="icons">
+                <div class="icon1 icon"><i class="fa-regular fa-truck"></i></div>
+                <p class="icon-desc">Free Shipping</p>
+                <p class="icon-sub">On orders over $50</p>
+            </div>
+            <div class="icons">
+                <div class="icon2 icon"><i class="fa-solid fa-shield"></i></div>
+                <p class="icon-desc">Secure Payment</p>
+                <p class="icon-sub">100% protected</p>
+            </div>
+            <div class="icons">
+                <div class="icon3 icon"><i class="fa-solid fa-arrows-spin"></i></div>
+                <p class="icon-desc">Easy Returns</p>
+                <p class="icon-sub">30-day return</p>
+            </div>
+        </div>
+    </div>
+    <div class="main-img">
+        <img src="{% static 'images/girl.png' %}" alt="">
+    </div>
+</div> <!--hero section ends -->
+
+<!-- shop by catagory-->
+
+<div class="cata-main">
+    <div class="cata-head">
+        <h2>Shop by Catagories</h2>
+    </div>
+    <div class="cata-sec">
+        {% for category in categories %}
+        <a href="{% url 'category_products' category.slug %}">
+            <div class="cata">
+                <div class="cata-img">
+                    <img src="{{category.image.url}}" alt="">
+                </div>
+                <div class="cata-p">
+                    <p>{{category.name}}</p>
+                </div>
+
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Offer Banner -->
+<div class="offer-main">
+    <div class="offer-content">
+        <div class="offer-logo">
+            <p class="off1">UP TO</p>
+            <p class="off2">40%</p>
+            <p class="off1">OFF</p>
+        </div>
+    </div>
+    <div class="offer-content">
+        <div class="offer-con1">
+            <p class="offer-span">LIMITED TIME OFFER</p>
+            <h1>Spring Sale is Live</h1>
+            <p class="offer-span1">Enjoy up to 40% off on</p>
+            <p class="offer-span1">selected collections.</p>
+            <button class="offer-btn">Explore Deals ></button>
+        </div>
+
+    </div>
+</div>
+
+<!-- trending section -->
+<section class="trending-section" id="trending">
+    <div class="trending-main">
+        <div class="trend-head">
+            <h2>Our Trending Products</h2>
+        </div>
+        <div class="trend-pro">
+            {% for product in trending_products %}
+            <div class="trend-card">
+                <div class="trend-img">
+                    {% if product.is_trending %}
+                    <span class="trending-badge">🔥 Trending</span>
+                    {% endif %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                </div>
+                <div class="trend-desc">
+                    <h4>{{ product.name }}</h4>
+                    <p class="price">₹{{ product.price }}</p>
+                    <p class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </p>
+                    <a href="{% url 'add_to_cart' product.id %}">
+                        <button>Add to Cart</button>
+                    </a>
+                    <a href="{% url 'add_to_wishlist' product.id %}">
+                        <button>Add to Wishlist</button>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</section>
+{% endblock %}
