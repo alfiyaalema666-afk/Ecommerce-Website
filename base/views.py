@@ -28,7 +28,7 @@ def search_product(request):
     }
     return render(request, "search.html", context)
 
-@login_required
+@login_required(login_url='login_')
 def add_to_cart(request, id):
 
     product = Product.objects.get(id=id)
@@ -44,7 +44,7 @@ def add_to_cart(request, id):
 
     return redirect("cart")
 
-@login_required
+@login_required(login_url='login_')
 def cart(request):
 
     cart_items = Cart.objects.filter(user=request.user)
@@ -61,7 +61,7 @@ def cart(request):
 
     return render(request, "cart.html", context)
 
-@login_required
+@login_required(login_url='login_')
 def add_to_wishlist(request, id):
 
     product = Product.objects.get(id=id)
@@ -73,7 +73,7 @@ def add_to_wishlist(request, id):
 
     return redirect("wishlist")
 
-@login_required
+@login_required(login_url='login_')
 def wishlist(request):
 
     wishlist_items = Wishlist.objects.filter(

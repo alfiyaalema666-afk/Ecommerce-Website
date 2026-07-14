@@ -20,12 +20,14 @@
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-regular fa-star"></i>
             </p>
+            {% if user.authenticated %}
             <a href="{% url 'add_to_cart' product.id %}">
                 <button>Add to Cart</button>
             </a>
             <a href="{% url 'add_to_wishlist' product.id %}">
                 <button>Add to Wishlist</button>
             </a>
+            {% endif %}
         </div>
     </div>
     {% endfor %}
