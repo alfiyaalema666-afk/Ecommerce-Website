@@ -37,7 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles','base','authen'
+    'cloudinary',
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
+    'base',
+    'authen',
+
+
 ]
 
 MIDDLEWARE = [
@@ -122,3 +128,11 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'fbo3rzvd',
+    'API_KEY': '527777931325517',
+    'API_SECRET': 'd0cW-JBE5yo5gh4YXXHcrgBUKBo',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
